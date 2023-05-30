@@ -1,0 +1,2405 @@
+{
+	"info": {
+		"_postman_id": "9a4bf762-2c87-44e7-ac35-bab1c38273e0",
+		"name": "a_Trello_GitHub",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14848974"
+	},
+	"item": [
+		{
+			"name": "Endpoint Security Testing",
+			"item": [
+				{
+					"name": "Token Only",
+					"item": [
+						{
+							"name": "Get a Board Copy",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Verify status code is 401\", function () {",
+											"    pm.response.to.have.status(401);",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/1/boards/{{boardId}}?token={{token}}",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"1",
+										"boards",
+										"{{boardId}}"
+									],
+									"query": [
+										{
+											"key": "key",
+											"value": "{{key}}",
+											"disabled": true
+										},
+										{
+											"key": "token",
+											"value": "{{token}}"
+										},
+										{
+											"key": "secret",
+											"value": "{{secret}}",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create a Label on a Board Copy",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Verify status code is 401\", function () {",
+											"    pm.response.to.have.status(401);",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/1/boards/{{boardId}}/labels?name=myLabel&color=red&token={{token}}",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"1",
+										"boards",
+										"{{boardId}}",
+										"labels"
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "myLabel"
+										},
+										{
+											"key": "color",
+											"value": "red"
+										},
+										{
+											"key": "key",
+											"value": "{{key}}",
+											"disabled": true
+										},
+										{
+											"key": "token",
+											"value": "{{token}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Boards that Member belongs to Copy",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Verify status code is 401\", function () {",
+											"    pm.response.to.have.status(401);",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/1/members/{{userId}}/boards?token={{token}}",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"1",
+										"members",
+										"{{userId}}",
+										"boards"
+									],
+									"query": [
+										{
+											"key": "key",
+											"value": "{{key}}",
+											"disabled": true
+										},
+										{
+											"key": "token",
+											"value": "{{token}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Labels on a Board Copy",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Verify status code is 401\", function () {\r",
+											"    pm.response.to.have.status(401);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/1/boards/{{board2Id}}/labels?token={{token}}",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"1",
+										"boards",
+										"{{board2Id}}",
+										"labels"
+									],
+									"query": [
+										{
+											"key": "key",
+											"value": "{{key}}",
+											"disabled": true
+										},
+										{
+											"key": "token",
+											"value": "{{token}}"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Key Only",
+					"item": [
+						{
+							"name": "Get a Board Copy",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Verify status code is 401\", function () {",
+											"    pm.response.to.have.status(401);",
+											"});",
+											"",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/1/boards/{{boardId}}?key={{key}}",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"1",
+										"boards",
+										"{{boardId}}"
+									],
+									"query": [
+										{
+											"key": "key",
+											"value": "{{key}}"
+										},
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"disabled": true
+										},
+										{
+											"key": "secret",
+											"value": "{{secret}}",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create a Label on a Board Copy",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Verify status code is 401\", function () {",
+											"    pm.response.to.have.status(401);",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/1/boards/{{boardId}}/labels?name=myLabel&color=red&key={{key}}",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"1",
+										"boards",
+										"{{boardId}}",
+										"labels"
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "myLabel"
+										},
+										{
+											"key": "color",
+											"value": "red"
+										},
+										{
+											"key": "key",
+											"value": "{{key}}"
+										},
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get the Members of a Board Copy",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Verify status code is 401\", function () {",
+											"    pm.response.to.have.status(401);",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/1/boards/{{boardId}}/members?key={{key}}",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"1",
+										"boards",
+										"{{boardId}}",
+										"members"
+									],
+									"query": [
+										{
+											"key": "key",
+											"value": "{{key}}"
+										},
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Boards that Member belongs to Copy",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Verify status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/1/members/{{userId}}/boards?key={{key}}",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"1",
+										"members",
+										"{{userId}}",
+										"boards"
+									],
+									"query": [
+										{
+											"key": "key",
+											"value": "{{key}}"
+										},
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Labels on a Board Copy",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Verify status code is 401\", function () {\r",
+											"    pm.response.to.have.status(401);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/1/boards/{{board2Id}}/labels?key={{key}}",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"1",
+										"boards",
+										"{{board2Id}}",
+										"labels"
+									],
+									"query": [
+										{
+											"key": "key",
+											"value": "{{key}}"
+										},
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "No Key No Token",
+					"item": [
+						{
+							"name": "Get a Board Copy",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Verify status code is 401\", function () {",
+											"    pm.response.to.have.status(401);",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/1/boards/{{boardId}}",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"1",
+										"boards",
+										"{{boardId}}"
+									],
+									"query": [
+										{
+											"key": "key",
+											"value": "{{key}}",
+											"disabled": true
+										},
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"disabled": true
+										},
+										{
+											"key": "secret",
+											"value": "{{secret}}",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create a Label on a Board Copy",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Verify status code is 401\", function () {",
+											"    pm.response.to.have.status(401);",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/1/boards/{{boardId}}/labels?name=myLabel&color=red",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"1",
+										"boards",
+										"{{boardId}}",
+										"labels"
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "myLabel"
+										},
+										{
+											"key": "color",
+											"value": "red"
+										},
+										{
+											"key": "key",
+											"value": "{{key}}",
+											"disabled": true
+										},
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get the Members of a Board Copy",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Verify status code is 401\", function () {",
+											"    pm.response.to.have.status(401);",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/1/boards/{{boardId}}/members",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"1",
+										"boards",
+										"{{boardId}}",
+										"members"
+									],
+									"query": [
+										{
+											"key": "key",
+											"value": "{{key}}",
+											"disabled": true
+										},
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Boards that Member belongs to Copy",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Verify status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/1/members/{{userId}}/boards",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"1",
+										"members",
+										"{{userId}}",
+										"boards"
+									],
+									"query": [
+										{
+											"key": "key",
+											"value": "{{key}}",
+											"disabled": true
+										},
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Labels on a Board Copy",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Verify status code is 401\", function () {\r",
+											"    pm.response.to.have.status(401);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/1/boards/{{board2Id}}/labels",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"1",
+										"boards",
+										"{{board2Id}}",
+										"labels"
+									],
+									"query": [
+										{
+											"key": "key",
+											"value": "{{key}}",
+											"disabled": true
+										},
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Key and Token",
+					"item": [
+						{
+							"name": "Get a Board",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Verify status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"const schema = {",
+											"    \"type\": \"object\",",
+											"    \"required\": [",
+											"        \"id\",",
+											"        \"name\",",
+											"        \"desc\",",
+											"        \"descData\",",
+											"        \"closed\",",
+											"        \"idOrganization\",",
+											"        \"idEnterprise\",",
+											"        \"pinned\",",
+											"        \"url\",",
+											"        \"shortUrl\",",
+											"        \"prefs\",",
+											"        \"labelNames\"",
+											"    ],",
+											"    \"properties\": {",
+											"        \"id\": {",
+											"            \"type\": \"string\"",
+											"        },",
+											"        \"name\": {",
+											"            \"type\": \"string\"",
+											"        },",
+											"        \"desc\": {",
+											"            \"type\": \"string\"",
+											"        },",
+											"        \"descData\": {",
+											"            \"type\": \"null\"",
+											"        },",
+											"        \"closed\": {",
+											"            \"type\": \"boolean\"",
+											"        },",
+											"        \"idOrganization\": {",
+											"            \"type\": \"string\"",
+											"        },",
+											"        \"idEnterprise\": {",
+											"            \"type\": \"null\"",
+											"        },",
+											"        \"pinned\": {",
+											"            \"type\": \"boolean\"",
+											"        },",
+											"        \"url\": {",
+											"            \"type\": \"string\"",
+											"        },",
+											"        \"shortUrl\": {",
+											"            \"type\": \"string\"",
+											"        },",
+											"        \"prefs\": {",
+											"            \"type\": \"object\",",
+											"            \"required\": [",
+											"                \"permissionLevel\",",
+											"                \"hideVotes\",",
+											"                \"voting\",",
+											"                \"comments\",",
+											"                \"invitations\",",
+											"                \"selfJoin\",",
+											"                \"cardCovers\",",
+											"                \"isTemplate\",",
+											"                \"cardAging\",",
+											"                \"calendarFeedEnabled\",",
+											"                \"hiddenPluginBoardButtons\",",
+											"                \"switcherViews\",",
+											"                \"background\",",
+											"                \"backgroundColor\",",
+											"                \"backgroundImage\",",
+											"                \"backgroundImageScaled\",",
+											"                \"backgroundTile\",",
+											"                \"backgroundBrightness\",",
+											"                \"backgroundBottomColor\",",
+											"                \"backgroundTopColor\",",
+											"                \"canBePublic\",",
+											"                \"canBeEnterprise\",",
+											"                \"canBeOrg\",",
+											"                \"canBePrivate\",",
+											"                \"canInvite\"",
+											"            ],",
+											"            \"properties\": {",
+											"                \"permissionLevel\": {",
+											"                    \"type\": \"string\"",
+											"                },",
+											"                \"hideVotes\": {",
+											"                    \"type\": \"boolean\"",
+											"                },",
+											"                \"voting\": {",
+											"                    \"type\": \"string\"",
+											"                },",
+											"                \"comments\": {",
+											"                    \"type\": \"string\"",
+											"                },",
+											"                \"invitations\": {",
+											"                    \"type\": \"string\"",
+											"                },",
+											"                \"selfJoin\": {",
+											"                    \"type\": \"boolean\"",
+											"                },",
+											"                \"cardCovers\": {",
+											"                    \"type\": \"boolean\"",
+											"                },",
+											"                \"isTemplate\": {",
+											"                    \"type\": \"boolean\"",
+											"                },",
+											"                \"cardAging\": {",
+											"                    \"type\": \"string\"",
+											"                },",
+											"                \"calendarFeedEnabled\": {",
+											"                    \"type\": \"boolean\"",
+											"                },",
+											"                \"hiddenPluginBoardButtons\": {",
+											"                    \"type\": \"array\",",
+											"                    \"items\": {}",
+											"                },",
+											"                \"switcherViews\": {",
+											"                    \"type\": \"array\",",
+											"                    \"items\": {",
+											"                        \"type\": \"object\",",
+											"                        \"required\": [",
+											"                            \"_id\",",
+											"                            \"viewType\",",
+											"                            \"enabled\"",
+											"                        ],",
+											"                        \"properties\": {",
+											"                            \"_id\": {",
+											"                                \"type\": \"string\"",
+											"                            },",
+											"                            \"viewType\": {",
+											"                                \"type\": \"string\"",
+											"                            },",
+											"                            \"enabled\": {",
+											"                                \"type\": \"boolean\"",
+											"                            }",
+											"                        }",
+											"                    }",
+											"                },",
+											"                \"background\": {",
+											"                    \"type\": \"string\"",
+											"                },",
+											"                \"backgroundColor\": {",
+											"                    \"type\": \"null\"",
+											"                },",
+											"                \"backgroundImage\": {",
+											"                    \"type\": \"string\"",
+											"                },",
+											"                \"backgroundImageScaled\": {",
+											"                    \"type\": \"array\",",
+											"                    \"items\": {",
+											"                        \"type\": \"object\",",
+											"                        \"required\": [",
+											"                            \"width\",",
+											"                            \"height\",",
+											"                            \"url\"",
+											"                        ],",
+											"                        \"properties\": {",
+											"                            \"width\": {",
+											"                                \"type\": \"integer\"",
+											"                            },",
+											"                            \"height\": {",
+											"                                \"type\": \"integer\"",
+											"                            },",
+											"                            \"url\": {",
+											"                                \"type\": \"string\"",
+											"                            }",
+											"                        }",
+											"                    }",
+											"                },",
+											"                \"backgroundTile\": {",
+											"                    \"type\": \"boolean\"",
+											"                },",
+											"                \"backgroundBrightness\": {",
+											"                    \"type\": \"string\"",
+											"                },",
+											"                \"backgroundBottomColor\": {",
+											"                    \"type\": \"string\"",
+											"                },",
+											"                \"backgroundTopColor\": {",
+											"                    \"type\": \"string\"",
+											"                },",
+											"                \"canBePublic\": {",
+											"                    \"type\": \"boolean\"",
+											"                },",
+											"                \"canBeEnterprise\": {",
+											"                    \"type\": \"boolean\"",
+											"                },",
+											"                \"canBeOrg\": {",
+											"                    \"type\": \"boolean\"",
+											"                },",
+											"                \"canBePrivate\": {",
+											"                    \"type\": \"boolean\"",
+											"                },",
+											"                \"canInvite\": {",
+											"                    \"type\": \"boolean\"",
+											"                }",
+											"            }",
+											"        },",
+											"        \"labelNames\": {",
+											"            \"type\": \"object\",",
+											"            \"required\": [",
+											"                \"green\",",
+											"                \"yellow\",",
+											"                \"orange\",",
+											"                \"red\",",
+											"                \"purple\",",
+											"                \"blue\",",
+											"                \"sky\",",
+											"                \"lime\",",
+											"                \"pink\",",
+											"                \"black\",",
+											"                \"green_dark\",",
+											"                \"yellow_dark\",",
+											"                \"orange_dark\",",
+											"                \"red_dark\",",
+											"                \"purple_dark\",",
+											"                \"blue_dark\",",
+											"                \"sky_dark\",",
+											"                \"lime_dark\",",
+											"                \"pink_dark\",",
+											"                \"black_dark\",",
+											"                \"green_light\",",
+											"                \"yellow_light\",",
+											"                \"orange_light\",",
+											"                \"red_light\",",
+											"                \"purple_light\",",
+											"                \"blue_light\",",
+											"                \"sky_light\",",
+											"                \"lime_light\",",
+											"                \"pink_light\",",
+											"                \"black_light\"",
+											"            ],",
+											"            \"properties\": {",
+											"                \"green\": {",
+											"                    \"type\": \"string\"",
+											"                },",
+											"                \"yellow\": {",
+											"                    \"type\": \"string\"",
+											"                },",
+											"                \"orange\": {",
+											"                    \"type\": \"string\"",
+											"                },",
+											"                \"red\": {",
+											"                    \"type\": \"string\"",
+											"                },",
+											"                \"purple\": {",
+											"                    \"type\": \"string\"",
+											"                },",
+											"                \"blue\": {",
+											"                    \"type\": \"string\"",
+											"                },",
+											"                \"sky\": {",
+											"                    \"type\": \"string\"",
+											"                },",
+											"                \"lime\": {",
+											"                    \"type\": \"string\"",
+											"                },",
+											"                \"pink\": {",
+											"                    \"type\": \"string\"",
+											"                },",
+											"                \"black\": {",
+											"                    \"type\": \"string\"",
+											"                },",
+											"                \"green_dark\": {",
+											"                    \"type\": \"string\"",
+											"                },",
+											"                \"yellow_dark\": {",
+											"                    \"type\": \"string\"",
+											"                },",
+											"                \"orange_dark\": {",
+											"                    \"type\": \"string\"",
+											"                },",
+											"                \"red_dark\": {",
+											"                    \"type\": \"string\"",
+											"                },",
+											"                \"purple_dark\": {",
+											"                    \"type\": \"string\"",
+											"                },",
+											"                \"blue_dark\": {",
+											"                    \"type\": \"string\"",
+											"                },",
+											"                \"sky_dark\": {",
+											"                    \"type\": \"string\"",
+											"                },",
+											"                \"lime_dark\": {",
+											"                    \"type\": \"string\"",
+											"                },",
+											"                \"pink_dark\": {",
+											"                    \"type\": \"string\"",
+											"                },",
+											"                \"black_dark\": {",
+											"                    \"type\": \"string\"",
+											"                },",
+											"                \"green_light\": {",
+											"                    \"type\": \"string\"",
+											"                },",
+											"                \"yellow_light\": {",
+											"                    \"type\": \"string\"",
+											"                },",
+											"                \"orange_light\": {",
+											"                    \"type\": \"string\"",
+											"                },",
+											"                \"red_light\": {",
+											"                    \"type\": \"string\"",
+											"                },",
+											"                \"purple_light\": {",
+											"                    \"type\": \"string\"",
+											"                },",
+											"                \"blue_light\": {",
+											"                    \"type\": \"string\"",
+											"                },",
+											"                \"sky_light\": {",
+											"                    \"type\": \"string\"",
+											"                },",
+											"                \"lime_light\": {",
+											"                    \"type\": \"string\"",
+											"                },",
+											"                \"pink_light\": {",
+											"                    \"type\": \"string\"",
+											"                },",
+											"                \"black_light\": {",
+											"                    \"type\": \"string\"",
+											"                }",
+											"            }",
+											"        }",
+											"    }",
+											"};",
+											"",
+											"pm.test(\"JSON schema validation\", ()=> {",
+											"    pm.response.to.have.jsonSchema(schema);",
+											"});",
+											"",
+											"pm.test(\"Name of the Board validation\", function () {",
+											"    var jsonData = pm.response.json();",
+											"    pm.expect(jsonData.name).to.eql(\"Test board 1\");",
+											"});",
+											"",
+											"pm.test(\"Body contains url validation\",() => {",
+											"  pm.expect(pm.response.text()).to.include(\"url\");",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/1/boards/{{boardId}}?key={{key}}&token={{token}}",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"1",
+										"boards",
+										"{{boardId}}"
+									],
+									"query": [
+										{
+											"key": "key",
+											"value": "{{key}}"
+										},
+										{
+											"key": "token",
+											"value": "{{token}}"
+										},
+										{
+											"key": "secret",
+											"value": "{{secret}}",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create a Label on a Board",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Verify status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"const schema = {",
+											"    \"type\": \"object\",",
+											"    \"required\": [",
+											"        \"id\",",
+											"        \"idBoard\",",
+											"        \"name\",",
+											"        \"color\",",
+											"        \"limits\"",
+											"    ],",
+											"    \"properties\": {",
+											"        \"id\": {",
+											"            \"type\": \"string\"",
+											"        },",
+											"        \"idBoard\": {",
+											"            \"type\": \"string\"",
+											"        },",
+											"        \"name\": {",
+											"            \"type\": \"string\"",
+											"        },",
+											"        \"color\": {",
+											"            \"type\": \"string\"",
+											"        },",
+											"        \"limits\": {",
+											"            \"type\": \"object\",",
+											"            \"required\": [],",
+											"            \"properties\": {}",
+											"        }",
+											"    }",
+											"};",
+											"",
+											"pm.test(\"JSON schema validation\", ()=> {",
+											"    pm.response.to.have.jsonSchema(schema);",
+											"});",
+											"",
+											"pm.test(\"Color of label validation\", function () {",
+											"    var jsonData = pm.response.json();",
+											"    pm.expect(jsonData.color).to.eql(\"red\");",
+											"});",
+											"",
+											"pm.test(\"Body contains limits\",() => {",
+											"  pm.expect(pm.response.text()).to.include(\"limits\");",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/1/boards/{{boardId}}/labels?name=myLabel&color=red&key={{key}}&token={{token}}",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"1",
+										"boards",
+										"{{boardId}}",
+										"labels"
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "myLabel"
+										},
+										{
+											"key": "color",
+											"value": "red"
+										},
+										{
+											"key": "key",
+											"value": "{{key}}"
+										},
+										{
+											"key": "token",
+											"value": "{{token}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get the Members of a Board",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Verify status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"const schema = {",
+											"    \"type\": \"array\",",
+											"    \"items\": [{",
+											"        \"type\": \"object\",",
+											"        \"required\": [",
+											"            \"id\",",
+											"            \"fullName\",",
+											"            \"username\"",
+											"        ],",
+											"        \"properties\": {",
+											"            \"id\": {",
+											"                \"type\": \"string\"",
+											"            },",
+											"            \"fullName\": {",
+											"                \"type\": \"string\"",
+											"            },",
+											"            \"username\": {",
+											"                \"type\": \"string\"",
+											"            }",
+											"        }",
+											"    }]",
+											"};",
+											"",
+											"pm.test(\"JSON schema validation\", ()=> {",
+											"    pm.response.to.have.jsonSchema(schema);",
+											"});",
+											"",
+											"pm.test(\"Fullname validation\", function () {",
+											"    var jsonData = pm.response.json();",
+											"    pm.expect(jsonData[0].fullName).to.eql(\"Роман Горячев\");",
+											"});",
+											"",
+											"pm.test(\"Body contains username\",() => {",
+											"  pm.expect(pm.response.text()).to.include(\"username\");",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/1/boards/{{boardId}}/members?key={{key}}&token={{token}}",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"1",
+										"boards",
+										"{{boardId}}",
+										"members"
+									],
+									"query": [
+										{
+											"key": "key",
+											"value": "{{key}}"
+										},
+										{
+											"key": "token",
+											"value": "{{token}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Boards that Member belongs to",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Verify status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"const schema = {",
+											"    \"type\": \"array\",",
+											"    \"items\": {",
+											"        \"type\": \"object\",",
+											"        \"required\": [",
+											"            \"id\",",
+											"            \"name\",",
+											"            \"desc\",",
+											"            \"descData\",",
+											"            \"closed\",",
+											"            \"dateClosed\",",
+											"            \"idOrganization\",",
+											"            \"idEnterprise\",",
+											"            \"limits\",",
+											"            \"pinned\",",
+											"            \"starred\",",
+											"            \"url\",",
+											"            \"prefs\",",
+											"            \"shortLink\",",
+											"            \"subscribed\",",
+											"            \"labelNames\",",
+											"            \"powerUps\",",
+											"            \"dateLastActivity\",",
+											"            \"dateLastView\",",
+											"            \"shortUrl\",",
+											"            \"idTags\",",
+											"            \"datePluginDisable\",",
+											"            \"creationMethod\",",
+											"            \"ixUpdate\",",
+											"            \"templateGallery\",",
+											"            \"enterpriseOwned\",",
+											"            \"idBoardSource\",",
+											"            \"premiumFeatures\",",
+											"            \"idMemberCreator\",",
+											"            \"memberships\"",
+											"        ],",
+											"        \"properties\": {",
+											"            \"id\": {",
+											"                \"type\": \"string\"",
+											"            },",
+											"            \"name\": {",
+											"                \"type\": \"string\"",
+											"            },",
+											"            \"desc\": {",
+											"                \"type\": \"string\"",
+											"            },",
+											"            \"descData\": {",
+											"                \"type\": \"null\"",
+											"            },",
+											"            \"closed\": {",
+											"                \"type\": \"boolean\"",
+											"            },",
+											"            \"dateClosed\": {",
+											"                \"type\": \"null\"",
+											"            },",
+											"            \"idOrganization\": {",
+											"                \"type\": \"string\"",
+											"            },",
+											"            \"idEnterprise\": {",
+											"                \"type\": \"null\"",
+											"            },",
+											"            \"limits\": {",
+											"                \"type\": \"object\",",
+											"                \"required\": [",
+											"                    \"attachments\",",
+											"                    \"boards\",",
+											"                    \"cards\",",
+											"                    \"checklists\",",
+											"                    \"checkItems\",",
+											"                    \"customFields\",",
+											"                    \"customFieldOptions\",",
+											"                    \"labels\",",
+											"                    \"lists\",",
+											"                    \"stickers\",",
+											"                    \"reactions\"",
+											"                ],",
+											"                \"properties\": {",
+											"                    \"attachments\": {",
+											"                        \"type\": \"object\",",
+											"                        \"required\": [",
+											"                            \"perBoard\",",
+											"                            \"perCard\"",
+											"                        ],",
+											"                        \"properties\": {",
+											"                            \"perBoard\": {",
+											"                                \"type\": \"object\",",
+											"                                \"required\": [",
+											"                                    \"status\",",
+											"                                    \"disableAt\",",
+											"                                    \"warnAt\"",
+											"                                ],",
+											"                                \"properties\": {",
+											"                                    \"status\": {",
+											"                                        \"type\": \"string\"",
+											"                                    },",
+											"                                    \"disableAt\": {",
+											"                                        \"type\": \"integer\"",
+											"                                    },",
+											"                                    \"warnAt\": {",
+											"                                        \"type\": \"integer\"",
+											"                                    }",
+											"                                }",
+											"                            },",
+											"                            \"perCard\": {",
+											"                                \"type\": \"object\",",
+											"                                \"required\": [",
+											"                                    \"status\",",
+											"                                    \"disableAt\",",
+											"                                    \"warnAt\"",
+											"                                ],",
+											"                                \"properties\": {",
+											"                                    \"status\": {",
+											"                                        \"type\": \"string\"",
+											"                                    },",
+											"                                    \"disableAt\": {",
+											"                                        \"type\": \"integer\"",
+											"                                    },",
+											"                                    \"warnAt\": {",
+											"                                        \"type\": \"integer\"",
+											"                                    }",
+											"                                }",
+											"                            }",
+											"                        }",
+											"                    },",
+											"                    \"boards\": {",
+											"                        \"type\": \"object\",",
+											"                        \"required\": [",
+											"                            \"totalMembersPerBoard\",",
+											"                            \"totalAccessRequestsPerBoard\"",
+											"                        ],",
+											"                        \"properties\": {",
+											"                            \"totalMembersPerBoard\": {",
+											"                                \"type\": \"object\",",
+											"                                \"required\": [",
+											"                                    \"status\",",
+											"                                    \"disableAt\",",
+											"                                    \"warnAt\"",
+											"                                ],",
+											"                                \"properties\": {",
+											"                                    \"status\": {",
+											"                                        \"type\": \"string\"",
+											"                                    },",
+											"                                    \"disableAt\": {",
+											"                                        \"type\": \"integer\"",
+											"                                    },",
+											"                                    \"warnAt\": {",
+											"                                        \"type\": \"integer\"",
+											"                                    }",
+											"                                }",
+											"                            },",
+											"                            \"totalAccessRequestsPerBoard\": {",
+											"                                \"type\": \"object\",",
+											"                                \"required\": [",
+											"                                    \"status\",",
+											"                                    \"disableAt\",",
+											"                                    \"warnAt\"",
+											"                                ],",
+											"                                \"properties\": {",
+											"                                    \"status\": {",
+											"                                        \"type\": \"string\"",
+											"                                    },",
+											"                                    \"disableAt\": {",
+											"                                        \"type\": \"integer\"",
+											"                                    },",
+											"                                    \"warnAt\": {",
+											"                                        \"type\": \"integer\"",
+											"                                    }",
+											"                                }",
+											"                            }",
+											"                        }",
+											"                    },",
+											"                    \"cards\": {",
+											"                        \"type\": \"object\",",
+											"                        \"required\": [",
+											"                            \"openPerBoard\",",
+											"                            \"openPerList\",",
+											"                            \"totalPerBoard\",",
+											"                            \"totalPerList\"",
+											"                        ],",
+											"                        \"properties\": {",
+											"                            \"openPerBoard\": {",
+											"                                \"type\": \"object\",",
+											"                                \"required\": [",
+											"                                    \"status\",",
+											"                                    \"disableAt\",",
+											"                                    \"warnAt\"",
+											"                                ],",
+											"                                \"properties\": {",
+											"                                    \"status\": {",
+											"                                        \"type\": \"string\"",
+											"                                    },",
+											"                                    \"disableAt\": {",
+											"                                        \"type\": \"integer\"",
+											"                                    },",
+											"                                    \"warnAt\": {",
+											"                                        \"type\": \"integer\"",
+											"                                    }",
+											"                                }",
+											"                            },",
+											"                            \"openPerList\": {",
+											"                                \"type\": \"object\",",
+											"                                \"required\": [",
+											"                                    \"status\",",
+											"                                    \"disableAt\",",
+											"                                    \"warnAt\"",
+											"                                ],",
+											"                                \"properties\": {",
+											"                                    \"status\": {",
+											"                                        \"type\": \"string\"",
+											"                                    },",
+											"                                    \"disableAt\": {",
+											"                                        \"type\": \"integer\"",
+											"                                    },",
+											"                                    \"warnAt\": {",
+											"                                        \"type\": \"integer\"",
+											"                                    }",
+											"                                }",
+											"                            },",
+											"                            \"totalPerBoard\": {",
+											"                                \"type\": \"object\",",
+											"                                \"required\": [",
+											"                                    \"status\",",
+											"                                    \"disableAt\",",
+											"                                    \"warnAt\"",
+											"                                ],",
+											"                                \"properties\": {",
+											"                                    \"status\": {",
+											"                                        \"type\": \"string\"",
+											"                                    },",
+											"                                    \"disableAt\": {",
+											"                                        \"type\": \"integer\"",
+											"                                    },",
+											"                                    \"warnAt\": {",
+											"                                        \"type\": \"integer\"",
+											"                                    }",
+											"                                }",
+											"                            },",
+											"                            \"totalPerList\": {",
+											"                                \"type\": \"object\",",
+											"                                \"required\": [",
+											"                                    \"status\",",
+											"                                    \"disableAt\",",
+											"                                    \"warnAt\"",
+											"                                ],",
+											"                                \"properties\": {",
+											"                                    \"status\": {",
+											"                                        \"type\": \"string\"",
+											"                                    },",
+											"                                    \"disableAt\": {",
+											"                                        \"type\": \"integer\"",
+											"                                    },",
+											"                                    \"warnAt\": {",
+											"                                        \"type\": \"integer\"",
+											"                                    }",
+											"                                }",
+											"                            }",
+											"                        }",
+											"                    },",
+											"                    \"checklists\": {",
+											"                        \"type\": \"object\",",
+											"                        \"required\": [",
+											"                            \"perBoard\",",
+											"                            \"perCard\"",
+											"                        ],",
+											"                        \"properties\": {",
+											"                            \"perBoard\": {",
+											"                                \"type\": \"object\",",
+											"                                \"required\": [",
+											"                                    \"status\",",
+											"                                    \"disableAt\",",
+											"                                    \"warnAt\"",
+											"                                ],",
+											"                                \"properties\": {",
+											"                                    \"status\": {",
+											"                                        \"type\": \"string\"",
+											"                                    },",
+											"                                    \"disableAt\": {",
+											"                                        \"type\": \"integer\"",
+											"                                    },",
+											"                                    \"warnAt\": {",
+											"                                        \"type\": \"integer\"",
+											"                                    }",
+											"                                }",
+											"                            },",
+											"                            \"perCard\": {",
+											"                                \"type\": \"object\",",
+											"                                \"required\": [",
+											"                                    \"status\",",
+											"                                    \"disableAt\",",
+											"                                    \"warnAt\"",
+											"                                ],",
+											"                                \"properties\": {",
+											"                                    \"status\": {",
+											"                                        \"type\": \"string\"",
+											"                                    },",
+											"                                    \"disableAt\": {",
+											"                                        \"type\": \"integer\"",
+											"                                    },",
+											"                                    \"warnAt\": {",
+											"                                        \"type\": \"integer\"",
+											"                                    }",
+											"                                }",
+											"                            }",
+											"                        }",
+											"                    },",
+											"                    \"checkItems\": {",
+											"                        \"type\": \"object\",",
+											"                        \"required\": [",
+											"                            \"perChecklist\"",
+											"                        ],",
+											"                        \"properties\": {",
+											"                            \"perChecklist\": {",
+											"                                \"type\": \"object\",",
+											"                                \"required\": [",
+											"                                    \"status\",",
+											"                                    \"disableAt\",",
+											"                                    \"warnAt\"",
+											"                                ],",
+											"                                \"properties\": {",
+											"                                    \"status\": {",
+											"                                        \"type\": \"string\"",
+											"                                    },",
+											"                                    \"disableAt\": {",
+											"                                        \"type\": \"integer\"",
+											"                                    },",
+											"                                    \"warnAt\": {",
+											"                                        \"type\": \"integer\"",
+											"                                    }",
+											"                                }",
+											"                            }",
+											"                        }",
+											"                    },",
+											"                    \"customFields\": {",
+											"                        \"type\": \"object\",",
+											"                        \"required\": [",
+											"                            \"perBoard\"",
+											"                        ],",
+											"                        \"properties\": {",
+											"                            \"perBoard\": {",
+											"                                \"type\": \"object\",",
+											"                                \"required\": [",
+											"                                    \"status\",",
+											"                                    \"disableAt\",",
+											"                                    \"warnAt\"",
+											"                                ],",
+											"                                \"properties\": {",
+											"                                    \"status\": {",
+											"                                        \"type\": \"string\"",
+											"                                    },",
+											"                                    \"disableAt\": {",
+											"                                        \"type\": \"integer\"",
+											"                                    },",
+											"                                    \"warnAt\": {",
+											"                                        \"type\": \"integer\"",
+											"                                    }",
+											"                                }",
+											"                            }",
+											"                        }",
+											"                    },",
+											"                    \"customFieldOptions\": {",
+											"                        \"type\": \"object\",",
+											"                        \"required\": [",
+											"                            \"perField\"",
+											"                        ],",
+											"                        \"properties\": {",
+											"                            \"perField\": {",
+											"                                \"type\": \"object\",",
+											"                                \"required\": [",
+											"                                    \"status\",",
+											"                                    \"disableAt\",",
+											"                                    \"warnAt\"",
+											"                                ],",
+											"                                \"properties\": {",
+											"                                    \"status\": {",
+											"                                        \"type\": \"string\"",
+											"                                    },",
+											"                                    \"disableAt\": {",
+											"                                        \"type\": \"integer\"",
+											"                                    },",
+											"                                    \"warnAt\": {",
+											"                                        \"type\": \"integer\"",
+											"                                    }",
+											"                                }",
+											"                            }",
+											"                        }",
+											"                    },",
+											"                    \"labels\": {",
+											"                        \"type\": \"object\",",
+											"                        \"required\": [",
+											"                            \"perBoard\"",
+											"                        ],",
+											"                        \"properties\": {",
+											"                            \"perBoard\": {",
+											"                                \"type\": \"object\",",
+											"                                \"required\": [",
+											"                                    \"status\",",
+											"                                    \"disableAt\",",
+											"                                    \"warnAt\"",
+											"                                ],",
+											"                                \"properties\": {",
+											"                                    \"status\": {",
+											"                                        \"type\": \"string\"",
+											"                                    },",
+											"                                    \"disableAt\": {",
+											"                                        \"type\": \"integer\"",
+											"                                    },",
+											"                                    \"warnAt\": {",
+											"                                        \"type\": \"integer\"",
+											"                                    }",
+											"                                }",
+											"                            }",
+											"                        }",
+											"                    },",
+											"                    \"lists\": {",
+											"                        \"type\": \"object\",",
+											"                        \"required\": [",
+											"                            \"openPerBoard\",",
+											"                            \"totalPerBoard\"",
+											"                        ],",
+											"                        \"properties\": {",
+											"                            \"openPerBoard\": {",
+											"                                \"type\": \"object\",",
+											"                                \"required\": [",
+											"                                    \"status\",",
+											"                                    \"disableAt\",",
+											"                                    \"warnAt\"",
+											"                                ],",
+											"                                \"properties\": {",
+											"                                    \"status\": {",
+											"                                        \"type\": \"string\"",
+											"                                    },",
+											"                                    \"disableAt\": {",
+											"                                        \"type\": \"integer\"",
+											"                                    },",
+											"                                    \"warnAt\": {",
+											"                                        \"type\": \"integer\"",
+											"                                    }",
+											"                                }",
+											"                            },",
+											"                            \"totalPerBoard\": {",
+											"                                \"type\": \"object\",",
+											"                                \"required\": [",
+											"                                    \"status\",",
+											"                                    \"disableAt\",",
+											"                                    \"warnAt\"",
+											"                                ],",
+											"                                \"properties\": {",
+											"                                    \"status\": {",
+											"                                        \"type\": \"string\"",
+											"                                    },",
+											"                                    \"disableAt\": {",
+											"                                        \"type\": \"integer\"",
+											"                                    },",
+											"                                    \"warnAt\": {",
+											"                                        \"type\": \"integer\"",
+											"                                    }",
+											"                                }",
+											"                            }",
+											"                        }",
+											"                    },",
+											"                    \"stickers\": {",
+											"                        \"type\": \"object\",",
+											"                        \"required\": [",
+											"                            \"perCard\"",
+											"                        ],",
+											"                        \"properties\": {",
+											"                            \"perCard\": {",
+											"                                \"type\": \"object\",",
+											"                                \"required\": [",
+											"                                    \"status\",",
+											"                                    \"disableAt\",",
+											"                                    \"warnAt\"",
+											"                                ],",
+											"                                \"properties\": {",
+											"                                    \"status\": {",
+											"                                        \"type\": \"string\"",
+											"                                    },",
+											"                                    \"disableAt\": {",
+											"                                        \"type\": \"integer\"",
+											"                                    },",
+											"                                    \"warnAt\": {",
+											"                                        \"type\": \"integer\"",
+											"                                    }",
+											"                                }",
+											"                            }",
+											"                        }",
+											"                    },",
+											"                    \"reactions\": {",
+											"                        \"type\": \"object\",",
+											"                        \"required\": [",
+											"                            \"perAction\",",
+											"                            \"uniquePerAction\"",
+											"                        ],",
+											"                        \"properties\": {",
+											"                            \"perAction\": {",
+											"                                \"type\": \"object\",",
+											"                                \"required\": [",
+											"                                    \"status\",",
+											"                                    \"disableAt\",",
+											"                                    \"warnAt\"",
+											"                                ],",
+											"                                \"properties\": {",
+											"                                    \"status\": {",
+											"                                        \"type\": \"string\"",
+											"                                    },",
+											"                                    \"disableAt\": {",
+											"                                        \"type\": \"integer\"",
+											"                                    },",
+											"                                    \"warnAt\": {",
+											"                                        \"type\": \"integer\"",
+											"                                    }",
+											"                                }",
+											"                            },",
+											"                            \"uniquePerAction\": {",
+											"                                \"type\": \"object\",",
+											"                                \"required\": [",
+											"                                    \"status\",",
+											"                                    \"disableAt\",",
+											"                                    \"warnAt\"",
+											"                                ],",
+											"                                \"properties\": {",
+											"                                    \"status\": {",
+											"                                        \"type\": \"string\"",
+											"                                    },",
+											"                                    \"disableAt\": {",
+											"                                        \"type\": \"integer\"",
+											"                                    },",
+											"                                    \"warnAt\": {",
+											"                                        \"type\": \"integer\"",
+											"                                    }",
+											"                                }",
+											"                            }",
+											"                        }",
+											"                    }",
+											"                }",
+											"            },",
+											"            \"pinned\": {",
+											"                \"type\": \"boolean\"",
+											"            },",
+											"            \"starred\": {",
+											"                \"type\": \"boolean\"",
+											"            },",
+											"            \"url\": {",
+											"                \"type\": \"string\"",
+											"            },",
+											"            \"prefs\": {",
+											"                \"type\": \"object\",",
+											"                \"required\": [",
+											"                    \"permissionLevel\",",
+											"                    \"hideVotes\",",
+											"                    \"voting\",",
+											"                    \"comments\",",
+											"                    \"invitations\",",
+											"                    \"selfJoin\",",
+											"                    \"cardCovers\",",
+											"                    \"isTemplate\",",
+											"                    \"cardAging\",",
+											"                    \"calendarFeedEnabled\",",
+											"                    \"hiddenPluginBoardButtons\",",
+											"                    \"switcherViews\",",
+											"                    \"background\",",
+											"                    \"backgroundColor\",",
+											"                    \"backgroundImage\",",
+											"                    \"backgroundImageScaled\",",
+											"                    \"backgroundTile\",",
+											"                    \"backgroundBrightness\",",
+											"                    \"backgroundBottomColor\",",
+											"                    \"backgroundTopColor\",",
+											"                    \"canBePublic\",",
+											"                    \"canBeEnterprise\",",
+											"                    \"canBeOrg\",",
+											"                    \"canBePrivate\",",
+											"                    \"canInvite\"",
+											"                ],",
+											"                \"properties\": {",
+											"                    \"permissionLevel\": {",
+											"                        \"type\": \"string\"",
+											"                    },",
+											"                    \"hideVotes\": {",
+											"                        \"type\": \"boolean\"",
+											"                    },",
+											"                    \"voting\": {",
+											"                        \"type\": \"string\"",
+											"                    },",
+											"                    \"comments\": {",
+											"                        \"type\": \"string\"",
+											"                    },",
+											"                    \"invitations\": {",
+											"                        \"type\": \"string\"",
+											"                    },",
+											"                    \"selfJoin\": {",
+											"                        \"type\": \"boolean\"",
+											"                    },",
+											"                    \"cardCovers\": {",
+											"                        \"type\": \"boolean\"",
+											"                    },",
+											"                    \"isTemplate\": {",
+											"                        \"type\": \"boolean\"",
+											"                    },",
+											"                    \"cardAging\": {",
+											"                        \"type\": \"string\"",
+											"                    },",
+											"                    \"calendarFeedEnabled\": {",
+											"                        \"type\": \"boolean\"",
+											"                    },",
+											"                    \"hiddenPluginBoardButtons\": {",
+											"                        \"type\": \"array\",",
+											"                        \"items\": {}",
+											"                    },",
+											"                    \"switcherViews\": {",
+											"                        \"type\": \"array\",",
+											"                        \"items\": {",
+											"                            \"type\": \"object\",",
+											"                            \"required\": [",
+											"                                \"_id\",",
+											"                                \"viewType\",",
+											"                                \"enabled\",",
+											"                                \"typeName\",",
+											"                                \"id\"",
+											"                            ],",
+											"                            \"properties\": {",
+											"                                \"_id\": {",
+											"                                    \"type\": \"string\"",
+											"                                },",
+											"                                \"viewType\": {",
+											"                                    \"type\": \"string\"",
+											"                                },",
+											"                                \"enabled\": {",
+											"                                    \"type\": \"boolean\"",
+											"                                },",
+											"                                \"typeName\": {",
+											"                                    \"type\": \"string\"",
+											"                                },",
+											"                                \"id\": {",
+											"                                    \"type\": \"string\"",
+											"                                }",
+											"                            }",
+											"                        }",
+											"                    },",
+											"                    \"background\": {",
+											"                        \"type\": \"string\"",
+											"                    },",
+											"                    \"backgroundColor\": {",
+											"                        \"type\": \"null\"",
+											"                    },",
+											"                    \"backgroundImage\": {",
+											"                        \"type\": \"string\"",
+											"                    },",
+											"                    \"backgroundImageScaled\": {",
+											"                        \"type\": \"array\",",
+											"                        \"items\": {",
+											"                            \"type\": \"object\",",
+											"                            \"required\": [",
+											"                                \"width\",",
+											"                                \"height\",",
+											"                                \"url\"",
+											"                            ],",
+											"                            \"properties\": {",
+											"                                \"width\": {",
+											"                                    \"type\": \"integer\"",
+											"                                },",
+											"                                \"height\": {",
+											"                                    \"type\": \"integer\"",
+											"                                },",
+											"                                \"url\": {",
+											"                                    \"type\": \"string\"",
+											"                                }",
+											"                            }",
+											"                        }",
+											"                    },",
+											"                    \"backgroundTile\": {",
+											"                        \"type\": \"boolean\"",
+											"                    },",
+											"                    \"backgroundBrightness\": {",
+											"                        \"type\": \"string\"",
+											"                    },",
+											"                    \"backgroundBottomColor\": {",
+											"                        \"type\": \"string\"",
+											"                    },",
+											"                    \"backgroundTopColor\": {",
+											"                        \"type\": \"string\"",
+											"                    },",
+											"                    \"canBePublic\": {",
+											"                        \"type\": \"boolean\"",
+											"                    },",
+											"                    \"canBeEnterprise\": {",
+											"                        \"type\": \"boolean\"",
+											"                    },",
+											"                    \"canBeOrg\": {",
+											"                        \"type\": \"boolean\"",
+											"                    },",
+											"                    \"canBePrivate\": {",
+											"                        \"type\": \"boolean\"",
+											"                    },",
+											"                    \"canInvite\": {",
+											"                        \"type\": \"boolean\"",
+											"                    }",
+											"                }",
+											"            },",
+											"            \"shortLink\": {",
+											"                \"type\": \"string\"",
+											"            },",
+											"            \"subscribed\": {",
+											"                \"type\": \"boolean\"",
+											"            },",
+											"            \"labelNames\": {",
+											"                \"type\": \"object\",",
+											"                \"required\": [",
+											"                    \"green\",",
+											"                    \"yellow\",",
+											"                    \"orange\",",
+											"                    \"red\",",
+											"                    \"purple\",",
+											"                    \"blue\",",
+											"                    \"sky\",",
+											"                    \"lime\",",
+											"                    \"pink\",",
+											"                    \"black\",",
+											"                    \"green_dark\",",
+											"                    \"yellow_dark\",",
+											"                    \"orange_dark\",",
+											"                    \"red_dark\",",
+											"                    \"purple_dark\",",
+											"                    \"blue_dark\",",
+											"                    \"sky_dark\",",
+											"                    \"lime_dark\",",
+											"                    \"pink_dark\",",
+											"                    \"black_dark\",",
+											"                    \"green_light\",",
+											"                    \"yellow_light\",",
+											"                    \"orange_light\",",
+											"                    \"red_light\",",
+											"                    \"purple_light\",",
+											"                    \"blue_light\",",
+											"                    \"sky_light\",",
+											"                    \"lime_light\",",
+											"                    \"pink_light\",",
+											"                    \"black_light\"",
+											"                ],",
+											"                \"properties\": {",
+											"                    \"green\": {",
+											"                        \"type\": \"string\"",
+											"                    },",
+											"                    \"yellow\": {",
+											"                        \"type\": \"string\"",
+											"                    },",
+											"                    \"orange\": {",
+											"                        \"type\": \"string\"",
+											"                    },",
+											"                    \"red\": {",
+											"                        \"type\": \"string\"",
+											"                    },",
+											"                    \"purple\": {",
+											"                        \"type\": \"string\"",
+											"                    },",
+											"                    \"blue\": {",
+											"                        \"type\": \"string\"",
+											"                    },",
+											"                    \"sky\": {",
+											"                        \"type\": \"string\"",
+											"                    },",
+											"                    \"lime\": {",
+											"                        \"type\": \"string\"",
+											"                    },",
+											"                    \"pink\": {",
+											"                        \"type\": \"string\"",
+											"                    },",
+											"                    \"black\": {",
+											"                        \"type\": \"string\"",
+											"                    },",
+											"                    \"green_dark\": {",
+											"                        \"type\": \"string\"",
+											"                    },",
+											"                    \"yellow_dark\": {",
+											"                        \"type\": \"string\"",
+											"                    },",
+											"                    \"orange_dark\": {",
+											"                        \"type\": \"string\"",
+											"                    },",
+											"                    \"red_dark\": {",
+											"                        \"type\": \"string\"",
+											"                    },",
+											"                    \"purple_dark\": {",
+											"                        \"type\": \"string\"",
+											"                    },",
+											"                    \"blue_dark\": {",
+											"                        \"type\": \"string\"",
+											"                    },",
+											"                    \"sky_dark\": {",
+											"                        \"type\": \"string\"",
+											"                    },",
+											"                    \"lime_dark\": {",
+											"                        \"type\": \"string\"",
+											"                    },",
+											"                    \"pink_dark\": {",
+											"                        \"type\": \"string\"",
+											"                    },",
+											"                    \"black_dark\": {",
+											"                        \"type\": \"string\"",
+											"                    },",
+											"                    \"green_light\": {",
+											"                        \"type\": \"string\"",
+											"                    },",
+											"                    \"yellow_light\": {",
+											"                        \"type\": \"string\"",
+											"                    },",
+											"                    \"orange_light\": {",
+											"                        \"type\": \"string\"",
+											"                    },",
+											"                    \"red_light\": {",
+											"                        \"type\": \"string\"",
+											"                    },",
+											"                    \"purple_light\": {",
+											"                        \"type\": \"string\"",
+											"                    },",
+											"                    \"blue_light\": {",
+											"                        \"type\": \"string\"",
+											"                    },",
+											"                    \"sky_light\": {",
+											"                        \"type\": \"string\"",
+											"                    },",
+											"                    \"lime_light\": {",
+											"                        \"type\": \"string\"",
+											"                    },",
+											"                    \"pink_light\": {",
+											"                        \"type\": \"string\"",
+											"                    },",
+											"                    \"black_light\": {",
+											"                        \"type\": \"string\"",
+											"                    }",
+											"                }",
+											"            },",
+											"            \"powerUps\": {",
+											"                \"type\": \"array\",",
+											"                \"items\": {}",
+											"            },",
+											"            \"dateLastActivity\": {",
+											"                \"type\": \"null\"",
+											"            },",
+											"            \"dateLastView\": {",
+											"                \"type\": \"string\"",
+											"            },",
+											"            \"shortUrl\": {",
+											"                \"type\": \"string\"",
+											"            },",
+											"            \"idTags\": {",
+											"                \"type\": \"array\",",
+											"                \"items\": {}",
+											"            },",
+											"            \"datePluginDisable\": {",
+											"                \"type\": \"null\"",
+											"            },",
+											"            \"creationMethod\": {",
+											"                \"type\": \"string\"",
+											"            },",
+											"            \"ixUpdate\": {",
+											"                \"type\": \"string\"",
+											"            },",
+											"            \"templateGallery\": {",
+											"                \"type\": \"null\"",
+											"            },",
+											"            \"enterpriseOwned\": {",
+											"                \"type\": \"boolean\"",
+											"            },",
+											"            \"idBoardSource\": {",
+											"                \"type\": \"null\"",
+											"            },",
+											"            \"premiumFeatures\": {",
+											"                \"type\": \"array\",",
+											"                \"items\": {",
+											"                    \"type\": \"string\"",
+											"                }",
+											"            },",
+											"            \"idMemberCreator\": {",
+											"                \"type\": \"string\"",
+											"            },",
+											"            \"memberships\": {",
+											"                \"type\": \"array\",",
+											"                \"items\": {",
+											"                    \"type\": \"object\",",
+											"                    \"required\": [",
+											"                        \"idMember\",",
+											"                        \"memberType\",",
+											"                        \"unconfirmed\",",
+											"                        \"deactivated\",",
+											"                        \"id\"",
+											"                    ],",
+											"                    \"properties\": {",
+											"                        \"idMember\": {",
+											"                            \"type\": \"string\"",
+											"                        },",
+											"                        \"memberType\": {",
+											"                            \"type\": \"string\"",
+											"                        },",
+											"                        \"unconfirmed\": {",
+											"                            \"type\": \"boolean\"",
+											"                        },",
+											"                        \"deactivated\": {",
+											"                            \"type\": \"boolean\"",
+											"                        },",
+											"                        \"id\": {",
+											"                            \"type\": \"string\"",
+											"                        }",
+											"                    }",
+											"                }",
+											"            }",
+											"        }",
+											"    }",
+											"};",
+											"",
+											"pm.test(\"JSON schema validation\", ()=> {",
+											"    pm.response.to.have.jsonSchema(schema);",
+											"});",
+											"",
+											"pm.test(\"Name of the Board validation\", function () {",
+											"    var jsonData = pm.response.json();",
+											"    pm.expect(jsonData[1].name).to.eql(\"Test board 2\");",
+											"});",
+											"",
+											"pm.test(\"Body contains boards\",() => {",
+											"  pm.expect(pm.response.text()).to.include(\"boards\");",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/1/members/{{userId}}/boards?key={{key}}&token={{token}}",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"1",
+										"members",
+										"{{userId}}",
+										"boards"
+									],
+									"query": [
+										{
+											"key": "key",
+											"value": "{{key}}"
+										},
+										{
+											"key": "token",
+											"value": "{{token}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Labels on a Board",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Verify status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"const schema = {\r",
+											"    \"type\": \"array\",\r",
+											"    \"items\": {\r",
+											"        \"type\": \"object\",\r",
+											"        \"required\": [\r",
+											"            \"id\",\r",
+											"            \"idBoard\",\r",
+											"            \"name\",\r",
+											"            \"color\"\r",
+											"        ],\r",
+											"        \"properties\": {\r",
+											"            \"id\": {\r",
+											"                \"type\": \"string\"\r",
+											"            },\r",
+											"            \"idBoard\": {\r",
+											"                \"type\": \"string\"\r",
+											"            },\r",
+											"            \"name\": {\r",
+											"                \"type\": \"string\"\r",
+											"            },\r",
+											"            \"color\": {\r",
+											"                \"type\": \"string\"\r",
+											"            }\r",
+											"        }\r",
+											"    }\r",
+											"};\r",
+											"\r",
+											"pm.test(\"JSON schema validation\", ()=> {\r",
+											"    pm.response.to.have.jsonSchema(schema);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Body contains boards\",() => {\r",
+											"  pm.expect(pm.response.text()).to.include(\"idBoard\");\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/1/boards/{{board2Id}}/labels?key={{key}}&token={{token}}",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"1",
+										"boards",
+										"{{board2Id}}",
+										"labels"
+									],
+									"query": [
+										{
+											"key": "key",
+											"value": "{{key}}"
+										},
+										{
+											"key": "token",
+											"value": "{{token}}"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "key",
+			"value": "d0d0fa054e34d5a6818cb893cb63b861",
+			"type": "string"
+		},
+		{
+			"key": "token",
+			"value": "fd5be5779fc2a306898c35901be5f61345f7d3cc6db4996e274e24ff5e37fe9a",
+			"type": "string"
+		},
+		{
+			"key": "secret",
+			"value": "fe2ec6b766f0caf225e461ad5ec29103e8f2ae29afbec51e9ef6b629e96dab2c",
+			"type": "string"
+		},
+		{
+			"key": "boardId",
+			"value": "636351b913e06800f5949bc5",
+			"type": "string"
+		},
+		{
+			"key": "baseURL",
+			"value": "https://api.trello.com",
+			"type": "string"
+		},
+		{
+			"key": "userId",
+			"value": "63634b892d701f19ca572cfd",
+			"type": "string"
+		},
+		{
+			"key": "board2Id",
+			"value": "636351cf4b27de01267b5697",
+			"type": "string"
+		}
+	]
+}
