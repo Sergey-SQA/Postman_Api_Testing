@@ -11,11 +11,11 @@ jobs:
     
     steps:
       # Check out the repo, so the job can access it.  
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
  
       # Install Node on the runner
       - name: Use Node.js      
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
        
       # Install newman globally, and install the html extra reporter
       - name: Install newman
