@@ -33,6 +33,7 @@ jobs:
         
       # Upload the reports to TestArtifacts directory
       - name: Output the results
+        if: always()
         uses: actions/upload-artifact@v3
         with:
          name: Reports
