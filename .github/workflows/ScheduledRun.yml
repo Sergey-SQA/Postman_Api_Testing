@@ -6,12 +6,12 @@ on:
       environment:
         description: 'Choose Environment for Test Run'
         required: true
-        default: 'prod'
+        # --- ИЗМЕНЕНО: 'test' (Stage) теперь по умолчанию ---
+        default: 'test'
         type: 'choice'
         options:
           - prod
           - test 
-
       os:
         description: 'Choose Operating System'
         required: true
@@ -26,8 +26,13 @@ on:
     
 jobs:
   build:
-
     runs-on: ${{ inputs.os == 'windows' && 'windows-latest' || 'ubuntu-latest' }}
+
+    # --- ДОБАВЛЕНО: Динамическая переменная для файла окружения ---
+    env:
+      # Логика: Если выбран 'prod', берем Prod-файл.
+      # Во всех остальных случаях (включая 'test' и 'schedule') - берем Stage-файл.
+      ENV_FILE: ${{ inputs.environment == 'prod' && 'Trello_Env_Prod.postman_environment.json' || 'Trello_Env_Stage.postman_environment.json' }}
     
     steps:
       - uses: actions/checkout@v4
@@ -35,17 +40,17 @@ jobs:
       - name: Use Node.js      
         uses: actions/setup-node@v3
         
-      # Используем 'shell: bash', чтобы команды 'npm' работали
-      # одинаково на Linux и Windows
       - name: Install newman
         shell: bash
         run: |
           npm install -g newman
           npm install -g newman-reporter-htmlextra
   
+      # --- ИЗМЕНЕНО: Команда Newman теперь использует переменную $ENV_FILE ---
       - name: Run Postman Collection and Generate HTML Report
         shell: bash
-        run: 'newman run Trello.postman_collection.json --reporters cli,htmlextra --reporter-htmlextra-export report.html'
+        # Добавлен флаг '-e $ENV_FILE'
+        run: 'newman run Trello.postman_collection.json -e $ENV_FILE --reporters cli,htmlextra --reporter-htmlextra-export report.html'
       
       - name: Check Files
         shell: bash
@@ -53,21 +58,7 @@ jobs:
         
       - name: Output the results
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v3
         with:
           name: Reports
           path: "*html"
-          
-      - name: Send report via email
-        if: always()
-        uses: dawidd6/action-send-mail@v3
-        with:
-          server_address: smtp.gmail.com
-          server_port: 465
-          secure: true
-          username: ${{ secrets.MAIL_USERNAME }}
-          password: ${{ secrets.MAIL_PASSWORD }}
-          to: serpol.jb87@gmail.com
-          subject: Test Report
-          from: GitHub Actions <actions@example.com>
-          attachments: report.html    
